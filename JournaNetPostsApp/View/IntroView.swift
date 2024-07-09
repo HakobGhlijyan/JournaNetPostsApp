@@ -8,24 +8,18 @@
 import SwiftUI
 
 struct IntroView: View {
-    @State private var showLaunchView: Bool = false
-    @State private var launchUser: Bool = false
+    @AppStorage("currentUserSignIn") private var currentUserSignIn: Bool = false
     
     var body: some View {
         ZStack {
-            //0
-            OnboardViewLogo(showLaunchView: $showLaunchView)
-                .toolbar(.hidden, for: .navigationBar)
-                .zIndex(0.0)
+            Color.journaNetBlack.ignoresSafeArea()
             
-            //1
-            ZStack {
-                if showLaunchView{
-                    OnboardView(launchUser: $launchUser)
-                        .transition(AnyTransition.move(edge: .leading))
-                }
+            if currentUserSignIn {
+                SwiftUIView()
+            } else {
+                OnboardView()
             }
-            .zIndex(1.0)
+            
         }
     }
 }

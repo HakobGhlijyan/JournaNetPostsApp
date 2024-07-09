@@ -9,9 +9,25 @@ import SwiftUI
 
 @main
 struct JournaNetPostsAppApp: App {
+    @State private var showLaunchView: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            IntroView()
+            ZStack {
+                //0
+                OnboardViewLogo(showLaunchView: $showLaunchView)
+                    .toolbar(.hidden, for: .navigationBar)
+                    .zIndex(0.0)
+                
+                //1
+                ZStack {
+                    if showLaunchView {
+                        IntroView()
+                            .transition(AnyTransition.move(edge: .leading))
+                    }
+                }
+                .zIndex(1.0)
+            }
         }
     }
 }

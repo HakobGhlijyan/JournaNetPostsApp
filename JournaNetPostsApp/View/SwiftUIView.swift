@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+    @AppStorage("currentUserSignIn") private var currentUserSignIn: Bool = false
+    
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            Color.journaNetBlack.ignoresSafeArea()
+            
+            VStack {
+                Text("Hello, World!")
+                    .foregroundStyle(.white)
+                
+                Button("Exit") {
+                    signOut()
+                }
+            }
+        }
+    }
+    
+    func signOut() {
+        withAnimation(.spring()) {
+            currentUserSignIn = false
+        }
     }
 }
 

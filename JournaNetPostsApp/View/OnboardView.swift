@@ -10,11 +10,10 @@ import SwiftUI
 struct OnboardView: View {
     @State private var onBoardingViewState: Int = 1
     @State private var selection: Int = 1
-    
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     
-    @Binding var launchUser: Bool
-    
+    @AppStorage("currentUserSignIn") private var currentUserSignIn: Bool = false
+
     var body: some View {
         ZStack {
             Color.journaNetBlack.ignoresSafeArea()
@@ -38,10 +37,17 @@ struct OnboardView: View {
             }
         }
     }
-    
+}
+
+#Preview {
+    OnboardView()
+}
+
+//MARK: - Func
+extension OnboardView {
     func nextButtonPressed() {
         if onBoardingViewState == 3 && selection == 3 {
-            launchUser = true
+            signIn()
         } else {
             withAnimation(.bouncy) {
                 onBoardingViewState += 1
@@ -50,6 +56,21 @@ struct OnboardView: View {
         }
     }
     
+    func signIn() {
+        withAnimation(.spring()) {
+            currentUserSignIn = true
+        }
+    }
+    
+    func signOut() {
+        withAnimation(.spring()) {
+            currentUserSignIn = false
+        }
+    }
+}
+
+//MARK: - Some View
+extension OnboardView {
     private var nextButton: some View {
         Button(action: {
             nextButtonPressed()
@@ -156,9 +177,4 @@ struct OnboardView: View {
         .frame(height: 44)
         .padding(.bottom, 7)
     }
-    
-}
-
-#Preview {
-    OnboardView(launchUser: .constant(false))
 }

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct OnboardViewLogo: View {
-    @Binding var showLaunchView: Bool
-    
     @State private var value: Double = 0
     @State private var total: Double = 100
    
     //TIMER PUBLISHER
     private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
+    @Binding var showLaunchView: Bool
+
     var body: some View {
         ZStack {
             Color.journaNetBlack.ignoresSafeArea()
@@ -48,5 +48,5 @@ struct OnboardViewLogo: View {
 
 
 #Preview {
-    OnboardViewLogo(showLaunchView: .constant(true))
+    OnboardViewLogo(showLaunchView: .constant(false))
 }
