@@ -15,7 +15,7 @@ struct IntroView: View {
             Color.journaNetBlack.ignoresSafeArea()
             
             if currentUserSignIn {
-                SwiftUIView()
+                RootUIView()
             } else {
                 OnboardView()
             }
