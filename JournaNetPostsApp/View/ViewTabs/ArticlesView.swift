@@ -8,22 +8,47 @@
 import SwiftUI
 
 struct Articles: View {
+    @State private var articlesArray: [ArticlesModel] = [
+        ArticlesModel(titleCategory: "Football", subTitleMessages: "How Falcons stay on the top after 15 years"),
+        ArticlesModel(titleCategory: "Bascketball", subTitleMessages: "How Falcons stay on the top after 16 years"),
+    ]
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.journaNetBlack.ignoresSafeArea()
-                ScrollView {
-                    ForEach(0..<20) { item in
-                        row
+                if !articlesArray.isEmpty {
+                    ScrollView {
+                        ForEach(articlesArray) { article in
+                            RowViewComponent(titleCategory: article.titleCategory, subTitleMessages: article.subTitleMessages)
+                        }
                     }
+                } else {
+                    VStack {
+                        VStack {
+                            Text("No articles added")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.journaNetWhite)
+                            Text("Add an article with the plus icon above")
+                                .font(.title3)
+                                .foregroundStyle(.journaNetTabDisabled)
+                        }
+                        .padding(.top, 180)
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 }
+                
+                
             }
             .navigationTitle("Articles")
             .foregroundStyle(.journaNetPrimary)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        
+                        let newArticle = ArticlesModel(titleCategory: "Football", subTitleMessages: "How Falcons stay on the top after 15 years")
+                        articlesArray.append(newArticle)
                     }, label: {
                         Image(systemName: "plus.circle.fill")
                             .foregroundStyle(.journaNetPrimary)
@@ -31,37 +56,9 @@ struct Articles: View {
                 }
             }
         }
-        
     }
 }
 
 #Preview {
     RootUIView()
-}
-
-extension Articles {
-    private var row: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("basketball")
-                .foregroundStyle(.journaNetWhite)
-                .font(.caption)
-                .padding(.vertical, 4)
-                .padding(.horizontal, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 30).foregroundStyle(.journaNetPrimary)
-                )
-            
-            Text("How Falcons stay on the top after 15 years")
-                .foregroundStyle(.journaNetWhite)
-                .font(.system(size: 22))
-                .lineLimit(2)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(20)
-        .background(
-            RoundedRectangle(cornerRadius: 30)
-                .foregroundStyle(.journaNetPrimary.opacity(0.15))
-        )
-        .padding(.horizontal, 16)
-    }
 }

@@ -33,6 +33,7 @@ struct RootUIView: View {
         }
         .preferredColorScheme(.dark)
         .toolbarColorScheme(.dark, for: .navigationBar)
+        
     }
 }
 

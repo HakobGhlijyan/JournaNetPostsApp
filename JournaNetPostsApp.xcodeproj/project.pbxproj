@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34152DBC2C6E1F9B00704E9C /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34152DBB2C6E1F9B00704E9C /* ArticlesModel.swift */; };
 		346CEDA02C3D33830099DF2F /* RootUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CED9F2C3D33830099DF2F /* RootUIView.swift */; };
 		346CEDA22C3D345C0099DF2F /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CEDA12C3D345C0099DF2F /* IntroView.swift */; };
+		34ABC92F2C6DF7A600D2F734 /* RowViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABC92E2C6DF7A600D2F734 /* RowViewComponent.swift */; };
 		34C3C4EF2C3BF16F00D47100 /* JournaNetPostsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3C4EE2C3BF16F00D47100 /* JournaNetPostsAppApp.swift */; };
 		34C3C4F12C3BF16F00D47100 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3C4F02C3BF16F00D47100 /* OnboardView.swift */; };
 		34C3C4F32C3BF17000D47100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34C3C4F22C3BF17000D47100 /* Assets.xcassets */; };
@@ -23,8 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34152DBB2C6E1F9B00704E9C /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
 		346CED9F2C3D33830099DF2F /* RootUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUIView.swift; sourceTree = "<group>"; };
 		346CEDA12C3D345C0099DF2F /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		34ABC92E2C6DF7A600D2F734 /* RowViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewComponent.swift; sourceTree = "<group>"; };
 		34C3C4EB2C3BF16F00D47100 /* JournaNetPostsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournaNetPostsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C3C4EE2C3BF16F00D47100 /* JournaNetPostsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournaNetPostsAppApp.swift; sourceTree = "<group>"; };
 		34C3C4F02C3BF16F00D47100 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
@@ -50,6 +54,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34ABC92B2C6DF73E00D2F734 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				34ABC92C2C6DF74F00D2F734 /* Component */,
+				346CED9F2C3D33830099DF2F /* RootUIView.swift */,
+				346CEDA12C3D345C0099DF2F /* IntroView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		34ABC92C2C6DF74F00D2F734 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				34C3C4FF2C3C1C8900D47100 /* OnboardViewLogo.swift */,
+				34C3C4F02C3BF16F00D47100 /* OnboardView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		34ABC92D2C6DF76600D2F734 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				34ABC92E2C6DF7A600D2F734 /* RowViewComponent.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		34C3C4E22C3BF16F00D47100 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +105,7 @@
 				34C3C4FD2C3C1C6600D47100 /* Model */,
 				34C3C4FE2C3C1C6F00D47100 /* ViewModel */,
 				34C3C4FC2C3C1C5A00D47100 /* View */,
+				34ABC92D2C6DF76600D2F734 /* ViewComponents */,
 				34C3C4F22C3BF17000D47100 /* Assets.xcassets */,
 				34C3C4F42C3BF17000D47100 /* Preview Content */,
 			);
@@ -91,10 +123,7 @@
 		34C3C4FC2C3C1C5A00D47100 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				346CEDA12C3D345C0099DF2F /* IntroView.swift */,
-				34C3C4FF2C3C1C8900D47100 /* OnboardViewLogo.swift */,
-				34C3C4F02C3BF16F00D47100 /* OnboardView.swift */,
-				346CED9F2C3D33830099DF2F /* RootUIView.swift */,
+				34ABC92B2C6DF73E00D2F734 /* MainView */,
 				34CC71EB2C3D5CE800B472E1 /* ViewTabs */,
 			);
 			path = View;
@@ -104,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				34CC71DC2C3D491700B472E1 /* Tab.swift */,
+				34152DBB2C6E1F9B00704E9C /* ArticlesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,10 +237,12 @@
 				34C3C4F12C3BF16F00D47100 /* OnboardView.swift in Sources */,
 				34C3C5002C3C1C8900D47100 /* OnboardViewLogo.swift in Sources */,
 				34CC71E22C3D5C3400B472E1 /* ArticlesView.swift in Sources */,
+				34ABC92F2C6DF7A600D2F734 /* RowViewComponent.swift in Sources */,
 				34CC71E42C3D5C6D00B472E1 /* EventsView.swift in Sources */,
 				34CC71E62C3D5CA300B472E1 /* BudgetView.swift in Sources */,
 				346CEDA22C3D345C0099DF2F /* IntroView.swift in Sources */,
 				34CC71DD2C3D491700B472E1 /* Tab.swift in Sources */,
+				34152DBC2C6E1F9B00704E9C /* ArticlesModel.swift in Sources */,
 				346CEDA02C3D33830099DF2F /* RootUIView.swift in Sources */,
 				34CC71E82C3D5CB900B472E1 /* PostsView.swift in Sources */,
 				34C3C4EF2C3BF16F00D47100 /* JournaNetPostsAppApp.swift in Sources */,

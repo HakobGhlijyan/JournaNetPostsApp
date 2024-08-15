@@ -22,6 +22,7 @@ struct Settings: View {
                 Color.journaNetBlack.ignoresSafeArea()
                 VStack {
                     Text("Settings").foregroundStyle(.journaNetWhite)
+                    
                     Button("Exit") {
                         signOut()
                     }
