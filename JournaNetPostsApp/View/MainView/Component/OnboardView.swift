@@ -72,19 +72,12 @@ extension OnboardView {
 //MARK: - Some View
 extension OnboardView {
     private var nextButton: some View {
-        Button(action: {
-            nextButtonPressed()
-        }, label: {
-            Text("Next")
-                .font(.system(size: 17))
-                .foregroundStyle(.journaNetWhite)
-                .frame(height: 62)
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 16)
-                .background(.journaNetPrimary)
-                .cornerRadius(20)
-                .padding(.horizontal, 16)
-        })
+        Text("Next")
+            .buttonStyleCustom(isDisabled: false)
+            .asButton(.press) {
+                nextButtonPressed()
+            }
+            .padding(.horizontal, 16)
     }
     
     private var onBoardViewOne: some View {

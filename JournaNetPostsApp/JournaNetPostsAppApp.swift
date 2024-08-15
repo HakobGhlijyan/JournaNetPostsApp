@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct JournaNetPostsAppApp: App {
@@ -28,6 +29,7 @@ struct JournaNetPostsAppApp: App {
                 }
                 .zIndex(1.0)
             }
+            .modelContainer(for: ArticlesModel.self)
         }
     }
 }

@@ -6,15 +6,26 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct ArticlesModel: Identifiable {
+@Model
+final class ArticlesModel: Identifiable {
     let id: UUID
-    let titleCategory: String
-    let subTitleMessages: String
+    var headline: String
+    var titleCategory: String
+    var status: String
+    var publisher: String
+    var acticleText: String
     
-    init(id: UUID = UUID(), titleCategory: String, subTitleMessages: String) {
+    init(id: UUID = UUID(), titleCategory: String, headline: String, status: String, publisher: String, acticleText: String) {
         self.id = id
         self.titleCategory = titleCategory
-        self.subTitleMessages = subTitleMessages
+        self.headline = headline
+        self.status = status
+        self.publisher = publisher
+        self.acticleText = acticleText
     }
 }
+
+
+

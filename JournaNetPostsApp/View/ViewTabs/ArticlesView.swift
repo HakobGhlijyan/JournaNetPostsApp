@@ -6,21 +6,30 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Articles: View {
-    @State private var articlesArray: [ArticlesModel] = [
-        ArticlesModel(titleCategory: "Football", subTitleMessages: "How Falcons stay on the top after 15 years"),
-        ArticlesModel(titleCategory: "Bascketball", subTitleMessages: "How Falcons stay on the top after 16 years"),
-    ]
+    //Array
+    @Query private var articles: [ArticlesModel] = []
+    //Save - Context
+    @Environment(\.modelContext) private var modelContext
+    
+    @State private var showAddNewArtice = false
     
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.journaNetBlack.ignoresSafeArea()
-                if !articlesArray.isEmpty {
+                
+                if !articles.isEmpty {
                     ScrollView {
-                        ForEach(articlesArray) { article in
-                            RowViewComponent(titleCategory: article.titleCategory, subTitleMessages: article.subTitleMessages)
+                        ForEach(articles) { article in
+                            RowViewComponent(acticle: article)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                    Button("Delete") {
+                                        modelContext.delete(article)
+                                    }
+                                }
                         }
                     }
                 } else {
@@ -39,16 +48,16 @@ struct Articles: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 }
-                
-                
             }
             .navigationTitle("Articles")
             .foregroundStyle(.journaNetPrimary)
+            .sheet(isPresented: $showAddNewArtice) {
+                ArticlesAddNewView()
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        let newArticle = ArticlesModel(titleCategory: "Football", subTitleMessages: "How Falcons stay on the top after 15 years")
-                        articlesArray.append(newArticle)
+                        showAddNewArtice.toggle()
                     }, label: {
                         Image(systemName: "plus.circle.fill")
                             .foregroundStyle(.journaNetPrimary)

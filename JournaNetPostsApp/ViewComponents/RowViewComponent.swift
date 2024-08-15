@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct RowViewComponent: View {
-    var titleCategory: String = "Basketball"
-    var subTitleMessages: String = "How Falcons stay on the top after 15 years"
+    @State var acticle: ArticlesModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(titleCategory)
+            Text(acticle.titleCategory)
                 .foregroundStyle(.journaNetWhite)
                 .font(.caption)
                 .padding(.vertical, 4)
@@ -22,12 +21,12 @@ struct RowViewComponent: View {
                     RoundedRectangle(cornerRadius: 30).foregroundStyle(.journaNetPrimary)
                 )
             
-            Text(subTitleMessages)
+            Text(acticle.acticleText)
                 .foregroundStyle(.journaNetWhite)
                 .font(.system(size: 22))
                 .lineLimit(2)
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity,alignment: .topLeading)
         .padding(20)
         .background(
             RoundedRectangle(cornerRadius: 30)
@@ -38,6 +37,15 @@ struct RowViewComponent: View {
 }
 
 #Preview {
-    RowViewComponent(titleCategory: "Football", subTitleMessages: "How Falcons stay on the top after 15 years")
-        .preferredColorScheme(.dark)
+    RowViewComponent(
+        acticle: ArticlesModel(
+            titleCategory: "Basketball",
+            headline: "",
+            status: "",
+            publisher: "",
+            acticleText: "How Falcons stay on the top after 15 years"
+        )
+    )
+    .preferredColorScheme(.dark)
 }
+
