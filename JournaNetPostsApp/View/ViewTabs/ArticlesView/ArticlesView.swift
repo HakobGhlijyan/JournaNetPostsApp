@@ -13,7 +13,7 @@ struct Articles: View {
     @Query private var articles: [ArticlesModel] = []
     //Save - Context
     @Environment(\.modelContext) private var modelContext
-    
+    @StateObject private var viewModel = ArticlesViewModel()
     @State private var showAddNewArtice = false
     
     var body: some View {
@@ -21,18 +21,7 @@ struct Articles: View {
             ZStack {
                 Color.journaNetBlack.ignoresSafeArea()
                 
-                if !articles.isEmpty {
-                    ScrollView {
-                        ForEach(articles) { article in
-                            RowViewComponent(article: article)
-                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                    Button("Delete") {
-                                        modelContext.delete(article)
-                                    }
-                                }
-                        }
-                    }
-                } else {
+                if articles.isEmpty {
                     VStack {
                         VStack {
                             Text("No articles added")
@@ -47,12 +36,30 @@ struct Articles: View {
                         Spacer()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                } else {
+                    List(articles) { article in
+                        RowViewComponent(article: article)
+                            .onTapGesture {
+                                viewModel.editingArtice = article
+                            }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button("Delete", role: .destructive) {
+                                    modelContext.delete(article)
+                                }
+                            }
+                    }
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.inset)
+                    
                 }
             }
             .navigationTitle("Articles")
             .foregroundStyle(.journaNetPrimary)
             .sheet(isPresented: $showAddNewArtice) {
                 ArticlesAddNewView()
+            }
+            .sheet(item: $viewModel.editingArtice) { article in
+                ArticlesEditView(article: article)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

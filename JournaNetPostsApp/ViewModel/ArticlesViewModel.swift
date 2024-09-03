@@ -8,11 +8,15 @@
 import SwiftUI
 
 @MainActor
-final class ArticlesAddNewViewModel: ObservableObject {
+final class ArticlesViewModel: ObservableObject {
     @Published var headline: String = "" { didSet { validateForm() } }
     @Published var status: String = "" { didSet { validateForm() } }
     @Published var publisher: String = "" { didSet { validateForm() } }
     @Published var acticleText: String = "" { didSet { validateForm() } }
+    
+    @Published var selectedCategory: CategoryLine? = nil
+    @Published var editingArtice: ArticlesModel?
+
     
     @Published var isDisabled: Bool = true
     

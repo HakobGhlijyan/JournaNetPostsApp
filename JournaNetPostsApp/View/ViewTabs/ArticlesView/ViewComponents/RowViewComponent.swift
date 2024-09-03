@@ -32,7 +32,7 @@ struct RowViewComponent: View {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundStyle(.journaNetPrimary.opacity(0.15))
         )
-        .padding(.horizontal, 16)
+        .listRowBackground(Color.clear)
     }
 }
 

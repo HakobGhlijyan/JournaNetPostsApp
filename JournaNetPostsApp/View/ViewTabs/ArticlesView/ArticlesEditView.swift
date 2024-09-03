@@ -1,18 +1,36 @@
 //
-//  ArticlesAddNewView.swift
+//  ArticlesEditView.swift
 //  JournaNetPostsApp
 //
-//  Created by Hakob Ghlijyan on 15.08.2024.
+//  Created by Hakob Ghlijyan on 03.09.2024.
 //
 
 import SwiftUI
 import SwiftData
 
-struct ArticlesAddNewView: View {
+struct ArticlesEditView: View {
     //Save - Context
-    @Environment(\.modelContext) private var modelContext    
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = ArticlesViewModel()
+    
+    var article: ArticlesModel
+    
+    @State private var headline: String
+    @State private var status: String
+    @State private var publisher: String
+    @State private var acticleText: String
+    @State private var titleCategory: String
+
+
+    init(article: ArticlesModel) {
+        self.article = article
+        self._headline = State(initialValue: article.headline)
+        self._status = State(initialValue: article.status)
+        self._publisher = State(initialValue: article.publisher)
+        self._acticleText = State(initialValue: article.acticleText)
+        self._titleCategory = State(initialValue: article.titleCategory)
+    }
     
     var body: some View {
         NavigationStack {
@@ -21,8 +39,8 @@ struct ArticlesAddNewView: View {
                 
                 ScrollView {
                     VStack(spacing: 16) {
-                        TextField("Headline", text: $viewModel.headline)
-                            .textFieldStyleCustom($viewModel.headline)
+                        TextField("Headline", text: $headline)
+                            .textFieldStyleCustom($headline)
                         
                         ScrollView(.horizontal) {
                             HStack {
@@ -33,6 +51,7 @@ struct ArticlesAddNewView: View {
                                     )
                                     .onTapGesture {
                                         viewModel.selectedCategory = category
+                                        titleCategory = category.rawValue
                                     }
                                 }
                             }
@@ -40,14 +59,14 @@ struct ArticlesAddNewView: View {
                         .scrollIndicators(.never)
                         .frame(height: 21)
                         
-                        TextField("Status", text: $viewModel.status)
-                            .textFieldStyleCustom($viewModel.status)
+                        TextField("Status", text: $status)
+                            .textFieldStyleCustom($status)
                         
-                        TextField("Publisher", text: $viewModel.publisher)
-                            .textFieldStyleCustom($viewModel.publisher)
+                        TextField("Publisher", text: $publisher)
+                            .textFieldStyleCustom($publisher)
                         
-                        TextEditor(text: $viewModel.acticleText)
-                            .textEditorStyleCustom($viewModel.acticleText)
+                        TextEditor(text: $acticleText)
+                            .textEditorStyleCustom($acticleText)
                         
                         buttonLayer
                         
@@ -55,7 +74,7 @@ struct ArticlesAddNewView: View {
                     .padding()
                     .scrollIndicators(.never)
                 }
-                .navigationTitle("New acticles")
+                .navigationTitle("Edit acticles")
 
             }
             .toolbar {
@@ -69,29 +88,20 @@ struct ArticlesAddNewView: View {
     }
 
     private var buttonLayer: some View {
-        Text("Add")
-            .buttonStyleCustom(isDisabled: viewModel.isDisabled)
+        Text("Save")
+            .buttonStyleCustom(isDisabled: false)
             .asButton(.press) {
-                save()
+                saveChanges()
                 dismiss()
             }
-            .disabled(viewModel.isDisabled)
     }
     
-    func save() {
-        let newArticle = ArticlesModel(
-            titleCategory: viewModel.selectedCategory?.rawValue ?? "No Selected",
-            headline: viewModel.headline,
-            status: viewModel.status,
-            publisher: viewModel.publisher,
-            acticleText: viewModel.acticleText
-        )
-        modelContext.insert(newArticle)
-        
-        viewModel.headline = ""
-        viewModel.status = ""
-        viewModel.publisher = ""
-        viewModel.acticleText = ""
+    func saveChanges() {
+        article.headline = headline
+        article.status = status
+        article.publisher = publisher
+        article.acticleText = acticleText
+        article.titleCategory = titleCategory
         
         do {
             try modelContext.save()
@@ -102,6 +112,6 @@ struct ArticlesAddNewView: View {
 }
 
 #Preview {
-    ArticlesAddNewView()
+    RootUIView()
         .preferredColorScheme(.dark)
 }

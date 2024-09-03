@@ -8,11 +8,11 @@
 import SwiftUI
 
 enum CategoryLine: String, CaseIterable {
-    case basketball = "Basketball"
-    case football  = "Football"
-    case volleyball = "Volleyball"
-    case hockey = "Hockey"
-    case box = "Box"
-    case golf = "Golf"
-    case orther = "Orther"
+    case basketball = "basketball"
+    case football  = "football"
+    case volleyball = "volleyball"
+    case hockey = "hockey"
+    case box = "box"
+    case golf = "golf"
+    case orther = "orther"
 }
