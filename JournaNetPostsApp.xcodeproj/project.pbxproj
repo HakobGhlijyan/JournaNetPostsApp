@@ -68,6 +68,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34A3C3E92C8756A100B548A3 /* ArticlesView */ = {
+			isa = PBXGroup;
+			children = (
+				34ABC92D2C6DF76600D2F734 /* ViewComponents */,
+				34CC71E12C3D5C3400B472E1 /* ArticlesView.swift */,
+				34152DBD2C6E27E700704E9C /* ArticlesAddNewView.swift */,
+				34152DC92C6E43CE00704E9C /* CategoryLineView.swift */,
+			);
+			path = ArticlesView;
+			sourceTree = "<group>";
+		};
+		34A3C3EA2C8756AF00B548A3 /* EventsView */ = {
+			isa = PBXGroup;
+			children = (
+				34CC71E32C3D5C6D00B472E1 /* EventsView.swift */,
+			);
+			path = EventsView;
+			sourceTree = "<group>";
+		};
+		34A3C3EB2C8756B900B548A3 /* BudgetView */ = {
+			isa = PBXGroup;
+			children = (
+				34CC71E52C3D5CA300B472E1 /* BudgetView.swift */,
+			);
+			path = BudgetView;
+			sourceTree = "<group>";
+		};
+		34A3C3EC2C8756C100B548A3 /* PostsView */ = {
+			isa = PBXGroup;
+			children = (
+				34CC71E72C3D5CB900B472E1 /* PostsView.swift */,
+			);
+			path = PostsView;
+			sourceTree = "<group>";
+		};
+		34A3C3ED2C8756CB00B548A3 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				34CC71E92C3D5CD200B472E1 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		34ABC92B2C6DF73E00D2F734 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +162,6 @@
 				34C3C4FD2C3C1C6600D47100 /* Model */,
 				34C3C4FE2C3C1C6F00D47100 /* ViewModel */,
 				34C3C4FC2C3C1C5A00D47100 /* View */,
-				34ABC92D2C6DF76600D2F734 /* ViewComponents */,
 				34C3C4F22C3BF17000D47100 /* Assets.xcassets */,
 				34C3C4F42C3BF17000D47100 /* Preview Content */,
 			);
@@ -174,13 +216,11 @@
 		34CC71EB2C3D5CE800B472E1 /* ViewTabs */ = {
 			isa = PBXGroup;
 			children = (
-				34CC71E12C3D5C3400B472E1 /* ArticlesView.swift */,
-				34152DBD2C6E27E700704E9C /* ArticlesAddNewView.swift */,
-				34152DC92C6E43CE00704E9C /* CategoryLineView.swift */,
-				34CC71E32C3D5C6D00B472E1 /* EventsView.swift */,
-				34CC71E52C3D5CA300B472E1 /* BudgetView.swift */,
-				34CC71E72C3D5CB900B472E1 /* PostsView.swift */,
-				34CC71E92C3D5CD200B472E1 /* SettingsView.swift */,
+				34A3C3ED2C8756CB00B548A3 /* SettingsView */,
+				34A3C3EC2C8756C100B548A3 /* PostsView */,
+				34A3C3EB2C8756B900B548A3 /* BudgetView */,
+				34A3C3EA2C8756AF00B548A3 /* EventsView */,
+				34A3C3E92C8756A100B548A3 /* ArticlesView */,
 			);
 			path = ViewTabs;
 			sourceTree = "<group>";

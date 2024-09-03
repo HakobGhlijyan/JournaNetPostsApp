@@ -24,7 +24,7 @@ struct Articles: View {
                 if !articles.isEmpty {
                     ScrollView {
                         ForEach(articles) { article in
-                            RowViewComponent(acticle: article)
+                            RowViewComponent(article: article)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                     Button("Delete") {
                                         modelContext.delete(article)

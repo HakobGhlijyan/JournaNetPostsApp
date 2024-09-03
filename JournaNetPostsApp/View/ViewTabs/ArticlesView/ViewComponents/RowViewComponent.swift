@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct RowViewComponent: View {
-    @State var acticle: ArticlesModel
+    @State var article: ArticlesModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(acticle.titleCategory)
+            Text(article.titleCategory)
                 .foregroundStyle(.journaNetWhite)
                 .font(.caption)
                 .padding(.vertical, 4)
@@ -21,7 +21,7 @@ struct RowViewComponent: View {
                     RoundedRectangle(cornerRadius: 30).foregroundStyle(.journaNetPrimary)
                 )
             
-            Text(acticle.acticleText)
+            Text(article.acticleText)
                 .foregroundStyle(.journaNetWhite)
                 .font(.system(size: 22))
                 .lineLimit(2)
@@ -38,7 +38,7 @@ struct RowViewComponent: View {
 
 #Preview {
     RowViewComponent(
-        acticle: ArticlesModel(
+        article: ArticlesModel(
             titleCategory: "Basketball",
             headline: "",
             status: "",
