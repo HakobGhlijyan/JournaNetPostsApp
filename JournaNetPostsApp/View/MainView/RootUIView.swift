@@ -39,4 +39,5 @@ struct RootUIView: View {
 
 #Preview {
     RootUIView()
+        .modelContainer(for: ArticlesModel.self, inMemory: true)
 }

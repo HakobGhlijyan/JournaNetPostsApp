@@ -86,5 +86,10 @@ struct Articles: View {
 }
 
 #Preview {
-    RootUIView()
+    let preview = Preview(ArticlesModel.self)
+    preview.addExamples(ArticlesModel.sampleArticles)
+    
+    return Articles()
+        .modelContainer(preview.container)
+        .preferredColorScheme(.dark)
 }

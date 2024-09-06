@@ -112,6 +112,9 @@ struct ArticlesEditView: View {
 }
 
 #Preview {
-    RootUIView()
-        .preferredColorScheme(.dark)
+    let preview = Preview(ArticlesModel.self)
+    return  NavigationStack {
+        ArticlesEditView(article: ArticlesModel.sampleArticles[7])            .modelContainer(preview.container)
+            .preferredColorScheme(.dark)
+    }
 }

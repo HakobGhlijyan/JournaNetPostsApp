@@ -26,4 +26,5 @@ struct IntroView: View {
 
 #Preview {
     IntroView()
+        .modelContainer(for: ArticlesModel.self, inMemory: true)
 }

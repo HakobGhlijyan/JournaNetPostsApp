@@ -71,14 +71,11 @@ struct ArticlesInfoView: View {
     
 }
 
-//#Preview {
-//    ArticlesInfoView(article: dev.article)
-//        .preferredColorScheme(.dark)
-//}
+#Preview {
+    let preview = Preview(ArticlesModel.self)
+    return  NavigationStack {
+        ArticlesInfoView(article: ArticlesModel.sampleArticles[7])            .modelContainer(preview.container)
+            .preferredColorScheme(.dark)
+    }
+}
 
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ArticlesInfoView(article: dev.article)
-//            .preferredColorScheme(.dark)
-//    }
-//}

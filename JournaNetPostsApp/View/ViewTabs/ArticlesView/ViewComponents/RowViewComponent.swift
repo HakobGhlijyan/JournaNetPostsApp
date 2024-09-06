@@ -36,16 +36,8 @@ struct RowViewComponent: View {
     }
 }
 
-#Preview {
-    RowViewComponent(
-        article: ArticlesModel(
-            titleCategory: "Basketball",
-            headline: "",
-            status: "",
-            publisher: "",
-            acticleText: "How Falcons stay on the top after 15 years"
-        )
-    )
-    .preferredColorScheme(.dark)
-}
+//#Preview {
+//    RowViewComponent()
+//    .preferredColorScheme(.dark)
+//}
 
