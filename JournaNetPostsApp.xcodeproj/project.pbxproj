@@ -12,7 +12,6 @@
 		34152DC12C6E287400704E9C /* ButtonStyleViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34152DBF2C6E287400704E9C /* ButtonStyleViewModifier.swift */; };
 		34152DC22C6E287400704E9C /* RoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34152DC02C6E287400704E9C /* RoundedCornerShape.swift */; };
 		34152DC42C6E290700704E9C /* TextFieldViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34152DC32C6E290700704E9C /* TextFieldViewModifier.swift */; };
-		34152DC62C6E3BEB00704E9C /* CategoryLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34152DC52C6E3BEB00704E9C /* CategoryLine.swift */; };
 		34152DCA2C6E43CE00704E9C /* CategoryLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34152DC92C6E43CE00704E9C /* CategoryLineView.swift */; };
 		34152DCC2C6E46C400704E9C /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34152DCB2C6E46C400704E9C /* ArticlesViewModel.swift */; };
 		346CEDA02C3D33830099DF2F /* RootUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CED9F2C3D33830099DF2F /* RootUIView.swift */; };
@@ -33,7 +32,6 @@
 		34CC71E82C3D5CB900B472E1 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC71E72C3D5CB900B472E1 /* PostsView.swift */; };
 		34CC71EA2C3D5CD200B472E1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC71E92C3D5CD200B472E1 /* SettingsView.swift */; };
 		34E8332A2C889E4000BBA707 /* ArticlesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E833292C889E4000BBA707 /* ArticlesInfoView.swift */; };
-		34E8332D2C88B17300BBA707 /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E8332C2C88B17300BBA707 /* DeveloperPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +40,6 @@
 		34152DBF2C6E287400704E9C /* ButtonStyleViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyleViewModifier.swift; sourceTree = "<group>"; };
 		34152DC02C6E287400704E9C /* RoundedCornerShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerShape.swift; sourceTree = "<group>"; };
 		34152DC32C6E290700704E9C /* TextFieldViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModifier.swift; sourceTree = "<group>"; };
-		34152DC52C6E3BEB00704E9C /* CategoryLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLine.swift; sourceTree = "<group>"; };
 		34152DC92C6E43CE00704E9C /* CategoryLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLineView.swift; sourceTree = "<group>"; };
 		34152DCB2C6E46C400704E9C /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		346CED9F2C3D33830099DF2F /* RootUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUIView.swift; sourceTree = "<group>"; };
@@ -64,7 +61,6 @@
 		34CC71E72C3D5CB900B472E1 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		34CC71E92C3D5CD200B472E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		34E833292C889E4000BBA707 /* ArticlesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInfoView.swift; sourceTree = "<group>"; };
-		34E8332C2C88B17300BBA707 /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				34C3C4EE2C3BF16F00D47100 /* JournaNetPostsAppApp.swift */,
-				34E8332B2C88B15100BBA707 /* Developer */,
 				34CC71DE2C3D57E100B472E1 /* Extension */,
 				34C3C4FD2C3C1C6600D47100 /* Model */,
 				34C3C4FE2C3C1C6F00D47100 /* ViewModel */,
@@ -205,7 +200,6 @@
 			children = (
 				34CC71DC2C3D491700B472E1 /* Tab.swift */,
 				34152DBB2C6E1F9B00704E9C /* ArticlesModel.swift */,
-				34152DC52C6E3BEB00704E9C /* CategoryLine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,14 +232,6 @@
 				34A3C3E92C8756A100B548A3 /* ArticlesView */,
 			);
 			path = ViewTabs;
-			sourceTree = "<group>";
-		};
-		34E8332B2C88B15100BBA707 /* Developer */ = {
-			isa = PBXGroup;
-			children = (
-				34E8332C2C88B17300BBA707 /* DeveloperPreview.swift */,
-			);
-			path = Developer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +308,6 @@
 				34C3C5002C3C1C8900D47100 /* OnboardViewLogo.swift in Sources */,
 				34A3C3EF2C87615700B548A3 /* ArticlesEditView.swift in Sources */,
 				34152DCC2C6E46C400704E9C /* ArticlesViewModel.swift in Sources */,
-				34E8332D2C88B17300BBA707 /* DeveloperPreview.swift in Sources */,
 				34152DBE2C6E27E700704E9C /* ArticlesAddNewView.swift in Sources */,
 				346F724B2C8B568900A3F013 /* ArticlesSamples.swift in Sources */,
 				346F72492C8B565000A3F013 /* PreviewContainer.swift in Sources */,
@@ -340,7 +325,6 @@
 				34CC71E82C3D5CB900B472E1 /* PostsView.swift in Sources */,
 				34C3C4EF2C3BF16F00D47100 /* JournaNetPostsAppApp.swift in Sources */,
 				34152DCA2C6E43CE00704E9C /* CategoryLineView.swift in Sources */,
-				34152DC62C6E3BEB00704E9C /* CategoryLine.swift in Sources */,
 				34152DC22C6E287400704E9C /* RoundedCornerShape.swift in Sources */,
 				34CC71EA2C3D5CD200B472E1 /* SettingsView.swift in Sources */,
 			);

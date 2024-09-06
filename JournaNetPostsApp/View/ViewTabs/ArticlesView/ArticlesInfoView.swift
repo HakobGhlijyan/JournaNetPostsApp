@@ -24,7 +24,7 @@ struct ArticlesInfoView: View {
         self._status = State(initialValue: article.status)
         self._publisher = State(initialValue: article.publisher)
         self._acticleText = State(initialValue: article.acticleText)
-        self._titleCategory = State(initialValue: article.titleCategory)
+        self._titleCategory = State(initialValue: article.titleCategory.description)
     }
     
     var body: some View {
@@ -42,7 +42,7 @@ struct ArticlesInfoView: View {
                         Spacer()
                         
                         CategoryLineView(
-                            title: titleCategory.capitalized,
+                            title: titleCategory,
                             isSelected: true
                         )
                     }

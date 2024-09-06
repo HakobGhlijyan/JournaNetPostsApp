@@ -12,7 +12,7 @@ struct RowViewComponent: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(article.titleCategory)
+            Text(article.titleCategory.description)
                 .foregroundStyle(.journaNetWhite)
                 .font(.caption)
                 .padding(.vertical, 4)

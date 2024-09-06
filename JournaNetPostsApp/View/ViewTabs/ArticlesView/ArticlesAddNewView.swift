@@ -28,7 +28,7 @@ struct ArticlesAddNewView: View {
                             HStack {
                                 ForEach(CategoryLine.allCases, id: \.self) { category in
                                     CategoryLineView(
-                                        title: category.rawValue.capitalized,
+                                        title: category.rawValue,
                                         isSelected: category == viewModel.selectedCategory
                                     )
                                     .onTapGesture {
@@ -80,7 +80,7 @@ struct ArticlesAddNewView: View {
     
     func save() {
         let newArticle = ArticlesModel(
-            titleCategory: viewModel.selectedCategory?.rawValue ?? "No Selected",
+            titleCategory: viewModel.selectedCategory ?? .orther,
             headline: viewModel.headline,
             status: viewModel.status,
             publisher: viewModel.publisher,

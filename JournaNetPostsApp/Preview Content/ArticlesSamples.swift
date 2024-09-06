@@ -12,7 +12,7 @@ extension ArticlesModel {
     static var sampleArticles: [ArticlesModel] {
         [
             ArticlesModel(
-                titleCategory: "football",
+                titleCategory: .football,
                 headline: "New era of football",
                 status: "Writing",
                 publisher: "Post in Facebook",
@@ -20,7 +20,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "basketball",
+                titleCategory: .basketball,
                 headline: "New era of basketball",
                 status: "Writing",
                 publisher: "Post in NBA",
@@ -28,7 +28,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "volleyball",
+                titleCategory: .volleyball,
                 headline: "New era of volleyball",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -36,7 +36,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "hockey",
+                titleCategory: .hockey,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -44,7 +44,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "box",
+                titleCategory: .box,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -52,7 +52,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "golf",
+                titleCategory: .golf,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -60,7 +60,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "football",
+                titleCategory: .football,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -68,7 +68,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "football",
+                titleCategory: .football,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -77,7 +77,7 @@ extension ArticlesModel {
             ),
             
             ArticlesModel(
-                titleCategory: "golf",
+                titleCategory: .golf,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -85,7 +85,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "orther",
+                titleCategory: .orther,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",
@@ -93,7 +93,7 @@ extension ArticlesModel {
                 dateCreated: .now
             ),
             ArticlesModel(
-                titleCategory: "football",
+                titleCategory: .football,
                 headline: "New era of hockey",
                 status: "Writing",
                 publisher: "Post in CNN",

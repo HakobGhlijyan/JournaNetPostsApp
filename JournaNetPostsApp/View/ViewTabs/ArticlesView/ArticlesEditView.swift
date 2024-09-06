@@ -20,7 +20,7 @@ struct ArticlesEditView: View {
     @State private var status: String
     @State private var publisher: String
     @State private var acticleText: String
-    @State private var titleCategory: String
+    @State private var titleCategory: CategoryLine
 
 
     init(article: ArticlesModel) {
@@ -46,12 +46,12 @@ struct ArticlesEditView: View {
                             HStack {
                                 ForEach(CategoryLine.allCases, id: \.self) { category in
                                     CategoryLineView(
-                                        title: category.rawValue.capitalized,
-                                        isSelected: category == viewModel.selectedCategory
+                                        title: category.rawValue,
+                                        isSelected: category == titleCategory
                                     )
                                     .onTapGesture {
                                         viewModel.selectedCategory = category
-                                        titleCategory = category.rawValue
+                                        titleCategory = category
                                     }
                                 }
                             }

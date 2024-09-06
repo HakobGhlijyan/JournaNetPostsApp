@@ -12,13 +12,21 @@ import SwiftData
 final class ArticlesModel: Identifiable {
     let id: UUID
     var headline: String
-    var titleCategory: String
+    var titleCategory: CategoryLine
     var status: String
     var publisher: String
     var acticleText: String
     var dateCreated: Date
     
-    init(id: UUID = UUID(), titleCategory: String, headline: String, status: String, publisher: String, acticleText: String, dateCreated: Date = Date()) {
+    init(
+        id: UUID = UUID(),
+        titleCategory: CategoryLine = .orther,
+        headline: String,
+        status: String,
+        publisher: String,
+        acticleText: String,
+        dateCreated: Date = Date.now
+    ) {
         self.id = id
         self.titleCategory = titleCategory
         self.headline = headline
@@ -29,5 +37,29 @@ final class ArticlesModel: Identifiable {
     }
 }
 
-
-
+enum CategoryLine: String, Codable, Identifiable, CaseIterable {
+    case basketball, football, volleyball, hockey, box, golf, orther
+    
+    var id: Self {
+        self
+    }
+    
+    var description: String {
+        switch self {
+        case .basketball:
+            "basketball"
+        case .football:
+            "football"
+        case .volleyball:
+            "volleyball"
+        case .hockey:
+            "hockey"
+        case .box:
+            "box"
+        case .golf:
+            "golf"
+        case .orther:
+            "orther"
+        }
+    }
+}
