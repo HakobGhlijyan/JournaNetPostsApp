@@ -16,8 +16,8 @@ final class ArticlesViewModel: ObservableObject {
     
     @Published var selectedCategory: CategoryLine? = nil
     @Published var editingArtice: ArticlesModel?
+    @Published var infoArtice: ArticlesModel?
 
-    
     @Published var isDisabled: Bool = true
     
     var isFormValid: Bool {

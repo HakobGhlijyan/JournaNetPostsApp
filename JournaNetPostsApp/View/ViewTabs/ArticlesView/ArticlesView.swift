@@ -10,7 +10,9 @@ import SwiftData
 
 struct Articles: View {
     //Array
-    @Query private var articles: [ArticlesModel] = []
+    //@Query private var articles: [ArticlesModel] = []
+    @Query(sort: \ArticlesModel.dateCreated, order: .reverse, animation: .bouncy) private var articles: [ArticlesModel] = []
+    
     //Save - Context
     @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = ArticlesViewModel()
@@ -40,11 +42,16 @@ struct Articles: View {
                     List(articles) { article in
                         RowViewComponent(article: article)
                             .onTapGesture {
-                                viewModel.editingArtice = article
+                                viewModel.infoArtice = article
                             }
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                 Button("Delete", role: .destructive) {
                                     modelContext.delete(article)
+                                }
+                            }
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                Button("Edit", role: .cancel) {
+                                    viewModel.editingArtice = article
                                 }
                             }
                     }
@@ -60,6 +67,9 @@ struct Articles: View {
             }
             .sheet(item: $viewModel.editingArtice) { article in
                 ArticlesEditView(article: article)
+            }
+            .sheet(item: $viewModel.infoArtice) { article in
+                ArticlesInfoView(article: article)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

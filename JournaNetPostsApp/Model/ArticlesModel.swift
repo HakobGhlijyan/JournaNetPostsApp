@@ -16,14 +16,16 @@ final class ArticlesModel: Identifiable {
     var status: String
     var publisher: String
     var acticleText: String
+    var dateCreated: Date
     
-    init(id: UUID = UUID(), titleCategory: String, headline: String, status: String, publisher: String, acticleText: String) {
+    init(id: UUID = UUID(), titleCategory: String, headline: String, status: String, publisher: String, acticleText: String, dateCreated: Date = Date()) {
         self.id = id
         self.titleCategory = titleCategory
         self.headline = headline
         self.status = status
         self.publisher = publisher
         self.acticleText = acticleText
+        self.dateCreated = dateCreated
     }
 }
 
